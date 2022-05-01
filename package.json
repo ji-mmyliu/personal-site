@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://www.jimmyliu.dev/",
+  "homepage": "https://jimmyliu.dev/",
   "dependencies": {
     "gh-pages": "^3.2.3"
   }
