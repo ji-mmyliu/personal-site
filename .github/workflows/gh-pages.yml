@@ -23,5 +23,3 @@ jobs:
         git config --global user.name "ji-mmyliu"
         git remote set-url origin https://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@github.com/ji-mmyliu/portfolio-website-static.git
         npm run deploy
-    - name: Updating Domain
-      run: echo "Update domain"
