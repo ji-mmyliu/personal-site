@@ -38,7 +38,11 @@ curl --output auto_deploy.py https://jimmyliu.dev/static/auto_deploy_scripts/aut
 curl --output requirements.txt https://jimmyliu.dev/static/auto_deploy_scripts/requirements.txt
 curl --output auto_deploy.service https://jimmyliu.dev/static/auto_deploy_scripts/auto_deploy.service
 
-virtualenv venv
+if ! [ -d "venv" ]
+then
+    virtualenv venv
+fi
+
 source venv/bin/activate
 python3 -m pip install -r requirements.txt
 python3 -c "from auto_deploy import db; db.create_all();"
