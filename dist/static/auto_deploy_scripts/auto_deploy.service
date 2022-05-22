@@ -3,9 +3,9 @@ Description=VM Auto Deploy Server
 
 [Service]
 Type=simple
-WorkingDirectory="{{path}}"
+WorkingDirectory="/home/{{user}}"
 User="{{user}}"
-ExecStart="{{path}}/venv/bin/python3 {{path}}/auto_deploy.py"
+ExecStart="/home/{{user}}/venv/bin/python3 /home/{{user}}/auto_deploy.py"
 TasksMax=50
 MemoryMax=52428800
 

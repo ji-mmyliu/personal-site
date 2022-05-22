@@ -1,30 +1,35 @@
 #!/bin/bash
 
+# Error handling
+set -e
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+trap 'echo "\"${last_command}\" command filed with exit code $?."' EXIT
+
 # Install Git, cURL, pip3, and virtualenv
-if [ ! command -v git &> /dev/null ]
+if ! [ -x "$(command -v git)" ];
 then
     echo "Git not installed. Installing now..."
     sudo apt-get install -y git
     echo "Successfully installed Git."
 fi
 
-if [ ! command -v curl &> /dev/null ]
+if ! [ -x "$(command -v curl)" ];
 then
     echo "cURL not installed. Installing now..."
     sudo apt-get install -y curl
     echo "Successfully installed cURL."
 fi
 
-if [ ! command -v pip3 &> /dev/null ]
+if ! [ -x "$(command -v pip3)" ];
 then
-    echo "cURL not installed. Installing now..."
+    echo "pip3 not installed. Installing now..."
     sudo apt-get install -y python3-pip
     echo "Successfully installed pip3."
 fi
 
-if [ ! command -v virtualenv &> /dev/null ]
+if ! [ -x "$(command -v virtualenv)" ];
 then
-    echo "cURL not installed. Installing now..."
+    echo "virtualenv not installed. Installing now..."
     sudo apt-get install -y virtualenv
     echo "Successfully installed virtualenv."
 fi
@@ -39,7 +44,6 @@ python3 -m pip install -r requirements.txt
 python3 -c "from auto_deploy import db; db.create_all();"
 deactivate
 
-sed -i "s/{{path}}/$HOME/g" "auto_deploy.service"
 sed -i "s/{{user}}/$USER/g" "auto_deploy.service"
 
 sudo mv auto_deploy.service "/etc/systemd/system"
