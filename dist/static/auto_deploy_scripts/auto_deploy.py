@@ -2,8 +2,11 @@
 Flask app to automatically deploy processes in a virtual machine
 """
 
-from flask import Flask, request
-from flask_login import LoginManager, UserMixin
+from flask import Flask, request, render_template, redirect, flash
+from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user, login_required
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField
+from wtforms.validators import DataRequired
 from flask_sqlalchemy import SQLAlchemy
 import os, subprocess, bcrypt
 
@@ -38,9 +41,35 @@ class Repo(db.Model):
     def __repr__(self):
         return f"(id: {self.id}, name: {self.name}, deploy_key: {self.deploy_key}, owner_id: {self.owner_id})"
 
+class LoginForm(FlaskForm):
+    password = PasswordField('Password', validators=[DataRequired()])
+    submit = SubmitField('Login')
+
 @app.route("/")
 def home():
-    return ""
+    if current_user.is_authenticated:
+        return redirect("/dashboard")
+    else:
+        return redirect("/login")
+
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+    if current_user.is_authenticated:
+        return redirect("/")
+
+    form = LoginForm()
+    if form.validate_on_submit():
+        usr = User.query.filter_by(username = form.username.data).first()
+        if not usr:
+            flash("Error: Username not found")
+            return redirect("/login")
+        if bcrypt.checkpw(form.password.data.encode(), usr.password):
+            login_user(usr)
+            return redirect("/tasks")
+        else:
+            flash("Error: Password does not match with username")
+            return redirect("/login")
+    return render_template("login.html", form = form)
 
 @app.route("/deploy", methods = ['POST'])
 def deploy():

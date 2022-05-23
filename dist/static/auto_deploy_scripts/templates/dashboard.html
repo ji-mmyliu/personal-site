@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        font-weight:normal;
+    }
+
+    th {
+        background-color: #dddddd;
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        font-weight:500;
+    }
+</style>
+
+<article class="card mb-5" style="min-width:fit-content">
+    <div class="card-body">
+        <table>
+            <thead>
+                <tr>
+                    <th>Repository name</th>
+                    <th>Deploy request URL</th>
+                    <th>Deploy key</th>
+                </tr>
+            </thead>
+
+            {% for repo in repositories %}
+            <tr>
+                <td>{{repo.name}}</td>
+                <td>/deploy?repo_name={{repo.name}}</td>
+                <td>{{repo.deploy_key}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</article>
+
+<script>
+    var getDomain = function() {
+
+    }
+</script>
+
+{% endblock content %}
