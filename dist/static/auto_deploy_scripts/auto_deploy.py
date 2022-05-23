@@ -139,7 +139,10 @@ def deploy():
         fo.flush()
 
     with open('log.txt', 'r') as fi, open('errors.txt', 'r') as fe:
-        return f"Security checks passed. \n\"{repo_name}\" deployed with status code {proc.returncode}. \nTerminal output: {fi.read(5000)} \nTerminal errors: {fe.read(5000)}"
+        if proc.returncode == 0:
+            return f"Security checks passed. \n\"{repo_name}\" deployed with Status code {proc.returncode}. \nTerminal output: {fi.read(5000)} \nTerminal errors: {fe.read(5000)}"
+        else:
+            return f"Security checks passed. \n\"{repo_name}\" deployed with Error code {proc.returncode}. \nTerminal output: {fi.read(5000)} \nTerminal errors: {fe.read(5000)}"
 
 if __name__ == "__main__":
     app.run(debug = False)
