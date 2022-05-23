@@ -8,7 +8,7 @@ Environment="PYTHONPATH=/home/{{user}}"
 User={{user}}
 ExecStart=/home/{{user}}/venv/bin/python3 /home/{{user}}/venv/bin/gunicorn auto_deploy:app
 TasksMax=50
-MemoryMax=52428800
+MemoryMax=104857600
 
 [Install]
 WantedBy=multi-user.target

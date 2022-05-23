@@ -42,6 +42,7 @@ fi
 curl --output auto_deploy.py https://jimmyliu.dev/static/auto_deploy_scripts/auto_deploy.py
 curl --output requirements.txt https://jimmyliu.dev/static/auto_deploy_scripts/requirements.txt
 curl --output auto_deploy.service https://jimmyliu.dev/static/auto_deploy_scripts/auto_deploy.service
+curl --output new_user.sh https://jimmyliu.dev/static/auto_deploy_scripts/new_user.sh
 curl --output templates/dashboard.html https://jimmyliu.dev/static/auto_deploy_scripts/templates/dashboard.html
 curl --output templates/index.html https://jimmyliu.dev/static/auto_deploy_scripts/templates/index.html
 curl --output templates/login.html https://jimmyliu.dev/static/auto_deploy_scripts/templates/login.html
