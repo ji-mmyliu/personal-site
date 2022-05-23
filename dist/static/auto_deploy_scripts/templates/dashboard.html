@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "index.html" %}
 {% block content %}
 <style>
     table {
@@ -24,6 +24,7 @@
 
 <article class="card mb-5" style="min-width:fit-content">
     <div class="card-body">
+        <legend class="border-bottom mb-4" style="font-size: 17px; font-weight:bold">My Deployments</legend>
         <table>
             <thead>
                 <tr>
@@ -33,7 +34,7 @@
                 </tr>
             </thead>
 
-            {% for repo in repositories %}
+            {% for repo in repos %}
             <tr>
                 <td>{{repo.name}}</td>
                 <td>/deploy?repo_name={{repo.name}}</td>

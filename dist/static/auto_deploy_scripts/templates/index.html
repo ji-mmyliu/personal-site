@@ -7,7 +7,6 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     
@@ -16,27 +15,137 @@
         {% else %}
         <title>Auto Deployment Management System</title>
         {% endif %}
+
+        <style>
+          body {
+            background: #fafafa;
+            color: #333333;
+            margin-top: 5rem;
+          }
+
+          h1, h2, h3, h4, h5, h6 {
+            color: #444444;
+          }
+
+          .bg-steel {
+            background-color: #5f788a;
+          }
+
+          .site-header .navbar-nav .nav-link {
+            color: #cbd5db;
+          }
+
+          .site-header .navbar-nav .nav-link:hover {
+            color: #ffffff;
+          }
+
+          .site-header .navbar-nav .nav-link.active {
+            font-weight: 500;
+          }
+
+          .content-section {
+            background: #ffffff;
+            padding: 10px 20px;
+            border: 1px solid #dddddd;
+            border-radius: 3px;
+            margin-bottom: 20px;
+          }
+
+          .article-title {
+            color: #444444;
+          }
+
+          a.article-title:hover {
+            color: #428bca;
+            text-decoration: none;
+          }
+
+          .article-content {
+            white-space: pre-line;
+          }
+
+          .article-img {
+            height: 65px;
+            width: 65px;
+            margin-right: 16px;
+          }
+
+          .article-metadata {
+            padding-bottom: 1px;
+            margin-bottom: 4px;
+            border-bottom: 1px solid #e3e3e3
+          }
+
+          .article-metadata a:hover {
+            color: #333;
+            text-decoration: none;
+          }
+
+          .article-svg {
+            width: 25px;
+            height: 25px;
+            vertical-align: middle;
+          }
+
+          .account-img {
+            height: 125px;
+            width: 125px;
+            margin-right: 20px;
+            margin-bottom: 16px;
+          }
+
+          .account-heading {
+            font-size: 2.5rem;
+          }
+        </style>
     </head>
 
     <body>
         <header class="site-header">
-            <nav class="navbar navbar-expand-md navbar-dark bg-success fixed-top">
+            <nav class="navbar navbar-expand-md navbar-dark bg-info fixed-top">
               <div class="container">
-                <a class="navbar-brand mr-4" href="/home">Jimmy Liu's Portfolio</a>
+                <a class="navbar-brand mr-4" href="/home">Auto Deployment Management System</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarToggle">
                   <div class="navbar-nav mr-auto">
-                    <a class="nav-item nav-link" href="/about-me">About Me</a>
-                    <a class="nav-item nav-link" href="/projects">Projects</a>
-                    <a class="nav-item nav-link" href="/achievements">Achievements</a>
+                    <a class="nav-item nav-link" href="/dashboard">View my deployments</a>
+                    <a class="nav-item nav-link" href="/repo/new">Deploy new repository</a>
+                  </div>
+                  <!-- Navbar Right Side -->
+                  <div class="navbar-nav">
+                    {% if current_user.is_authenticated %}
+                      <a class="nav-item nav-link">Hello, {{current_user.username}}</a>
+                      <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    {% else %}
+                      <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+                    {% endif %}
                   </div>
                 </div>
               </div>
             </nav>
         </header>
-        {% block content %}{% endblock %}
+
+        <main role="main" class="container">
+          <div class="row">
+              <div class="col-md-8">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                  {% if messages %}
+                    {% for category, message in messages %}
+                      <div class="alert alert-{{ category }}">
+                        {{ message }}
+                      </div>
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+                {% block content %}{% endblock %}
+              </div>
+              
+              <div class="col-md-4">
+              </div>
+            </div>
+      </main>
     </body>
 
     <!-- Optional JavaScript -->

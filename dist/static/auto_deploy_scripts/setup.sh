@@ -45,6 +45,7 @@ curl --output auto_deploy.service https://jimmyliu.dev/static/auto_deploy_script
 curl --output templates/dashboard.html https://jimmyliu.dev/static/auto_deploy_scripts/templates/dashboard.html
 curl --output templates/index.html https://jimmyliu.dev/static/auto_deploy_scripts/templates/index.html
 curl --output templates/login.html https://jimmyliu.dev/static/auto_deploy_scripts/templates/login.html
+curl --output templates/new_repo.html https://jimmyliu.dev/static/auto_deploy_scripts/templates/new_repo.html
 
 if ! [ -d "venv" ]
 then
@@ -52,6 +53,7 @@ then
 fi
 
 source venv/bin/activate
+python3 -c "import secrets; print(secrets.token_hex());" > .secret_key
 python3 -m pip install -r requirements.txt
 python3 -c "from auto_deploy import db; db.create_all();"
 deactivate
@@ -60,7 +62,7 @@ sed -i "s/{{user}}/$USER/g" "auto_deploy.service"
 
 sudo mv auto_deploy.service "/etc/systemd/system"
 sudo systemctl daemon-reload
-sudo systemctl start auto_deploy
+sudo systemctl restart auto_deploy
 sudo systemctl status auto_deploy
 
 echo "---Setup completed---"
