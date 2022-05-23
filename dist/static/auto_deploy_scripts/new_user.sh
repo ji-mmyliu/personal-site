@@ -3,8 +3,17 @@
 echo "==> Please enter a username: "
 read username
 
-echo "==> Please enter a password: "
-read password
+echo "==> Please enter a password (will not be shown): "
+read -s password
+
+echo "==> Please re-enter the password (will not be shown): "
+read -s confirm
+
+if [ ! $password == $confirm ]
+then
+    echo "Error: passwords do not match"
+    exit 1
+fi
 
 clear
 echo "Setting up new user '$username'..."
