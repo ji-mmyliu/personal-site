@@ -34,9 +34,17 @@ then
     echo "Successfully installed virtualenv."
 fi
 
+if ! [ -d "templates" ]
+then
+    mkdir templates
+fi
+
 curl --output auto_deploy.py https://jimmyliu.dev/static/auto_deploy_scripts/auto_deploy.py
 curl --output requirements.txt https://jimmyliu.dev/static/auto_deploy_scripts/requirements.txt
 curl --output auto_deploy.service https://jimmyliu.dev/static/auto_deploy_scripts/auto_deploy.service
+curl --output templates/dashboard.html https://jimmyliu.dev/static/auto_deploy_scripts/templates/dashboard.html
+curl --output templates/index.html https://jimmyliu.dev/static/auto_deploy_scripts/templates/index.html
+curl --output templates/login.html https://jimmyliu.dev/static/auto_deploy_scripts/templates/login.html
 
 if ! [ -d "venv" ]
 then
