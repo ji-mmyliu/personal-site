@@ -1,6 +1,8 @@
 # Temporary Jekyll Folder
 portfolio-website/
 
+build/
+
 # Logs
 logs
 *.log
