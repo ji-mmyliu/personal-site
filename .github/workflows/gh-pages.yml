@@ -6,6 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: github-pages
     strategy:
       matrix:
         node-version: [14.x]
