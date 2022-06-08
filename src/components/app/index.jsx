@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { About } from "../about";
 import { Projects } from "../projects";
 import { Achievements } from "../achievements";
-
+import { NotFound } from "../notfound";
 
 export const _App = () => {
     const navigate = useNavigate();
@@ -53,6 +53,7 @@ export const _App = () => {
                 <Route path="/about-me" element={<About />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/achievements" element={<Achievements />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </div>
     );
