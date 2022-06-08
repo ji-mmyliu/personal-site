@@ -1,6 +1,9 @@
 import * as React from "react";
 
 export const About = () => {
+    React.useEffect(() => {
+        document.title = "About Me | Jimmy's Personal Website";
+    }, []);
     return (
         <div className="container pl-5 pr-5">
             <article className="card mb-3">

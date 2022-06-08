@@ -18,6 +18,10 @@ function Project(props) {
 }
 
 export const Projects = () => {
+    React.useEffect(() => {
+        document.title = "Projects | Jimmy's Personal Website";
+    }, []);
+
     return (
         <div className="container pl-5 pr-5">
             <article className="card mb-3">
