@@ -134,3 +134,11 @@ a.article-title:hover {
 #footer-icons a:hover {
     color: rgb(34, 104, 255);
 }
+
+div.project-content p {
+    max-width: 600px;
+}
+
+p.project-text {
+    max-width: 600px;
+}
