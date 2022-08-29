@@ -38,5 +38,5 @@ export const About = () => {
                 </div>
             </article>
         </div>
-    )
+    );
 }

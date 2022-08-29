@@ -56,5 +56,5 @@ export const Projects = () => {
                 </Project>
             </article>
         </div>
-    )
+    );
 }
