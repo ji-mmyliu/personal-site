@@ -7,8 +7,9 @@
         "module": "CommonJS",
         "strict": true,
         "skipLibCheck": true,
+        "noImplicitAny": false,
     },
     "include": [
         "src"
-    ]
+    ],
 }
