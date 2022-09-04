@@ -1,18 +1,18 @@
 import * as React from 'react';
 
-export const Resume = () => {
-    React.useEffect(() => {
+export const Resume = (): JSX.Element => {
+    React.useEffect((): void => {
         document.title = "Resume | Jimmy's Personal Website";
         window.addEventListener('resize', updateWidth);
         updateWidth();
     }, []);
 
-    const updateWidth = () => {
-        document.getElementById("resume").setAttribute("width", getContentWidth(document.getElementById("resume-card")));
+    const updateWidth = (): void => {
+        document.getElementById("resume")!.setAttribute("width", String(getContentWidth(document.getElementById("resume-card")!)));
     }
 
-    const getContentWidth = (element) => {
-        const styles = getComputedStyle(element)
+    const getContentWidth = (element: Element): number => {
+        const styles = getComputedStyle(element);
       
         return element.clientWidth
           - parseFloat(styles.paddingLeft)
@@ -23,7 +23,7 @@ export const Resume = () => {
         <div className="container pl-5 pr-5">
             <article className="card mb-3">
                 <div className="card-body" id="resume-card">
-                    <embed src="static/resume.pdf" id="resume" height={1200} />
+                    <embed src="/resume.pdf" id="resume" height={1200} />
                 </div>
             </article>
         </div>

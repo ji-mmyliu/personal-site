@@ -1,9 +1,9 @@
 import * as React from "react";
 
-const Project = (props) => {
+const Project = (props: {name: string, file: string, children: Array<JSX.Element>}): JSX.Element => {
     return (
         <div className="card text-light" style={{marginLeft:'2.5em', marginBottom:'2em'}}>
-            <img className="card-img" src={`static/${props.file}`} alt={props.name} style={{width:'40em', height:'24em', filter:'brightness(40%)'}}></img>
+            <img className="card-img" src={`/${props.file}`} alt={props.name} style={{width:'40em', height:'24em', filter:'brightness(40%)'}}></img>
             <div className="card-img-overlay">
                 <h2 style={{color:'#fff'}}>{props.name}</h2>
                 <div className="project-content">
@@ -14,8 +14,8 @@ const Project = (props) => {
     );
 }
 
-export const Projects = () => {
-    React.useEffect(() => {
+export const Projects = (): JSX.Element => {
+    React.useEffect((): void => {
         document.title = "Projects | Jimmy's Personal Website";
     }, []);
 

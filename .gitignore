@@ -2,6 +2,7 @@
 portfolio-website/
 
 build/
+dist/
 
 # Logs
 logs

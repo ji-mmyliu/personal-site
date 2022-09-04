@@ -1,9 +1,8 @@
 import * as React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export const About = () => {
-    const navigate = useNavigate();
-    React.useEffect(() => {
+export const About = (): JSX.Element => {
+    React.useEffect((): void => {
         document.title = "About Me | Jimmy's Personal Website";
     }, []);
     return (
@@ -27,7 +26,7 @@ export const About = () => {
         
                     <div className="paragraph">
                         <p className="card-text" style={{marginBottom:5+'rem'}}>
-                            You might be interested in some of my <a href="/projects" onClick={(ev)=>{ev.preventDefault();navigate("/projects");}}>projects</a>, or <a href="/achievements" onClick={(ev)=>{ev.preventDefault();navigate("/achievements");}}>achievements</a>. Find me on <a href="https://devpost.com/ji-mmyliu">Devpost</a>, <a href="https://dmoj.ca/user/JimmyLiu">DMOJ</a>, <a href="https://mcpt.ca/user/ji_mmyliu">MCPT</a>, <a href="mailto:jimmyjcl753@gmail.com">email</a>, and <a href="https://github.com/ji-mmyliu">Github</a>.
+                            You might be interested in some of my <Link to="/projects">projects</Link>, or <Link to="/achievements">achievements</Link>. Find me on <a href="https://devpost.com/ji-mmyliu">Devpost</a>, <a href="https://dmoj.ca/user/JimmyLiu">DMOJ</a>, <a href="https://mcpt.ca/user/ji_mmyliu">MCPT</a>, <a href="mailto:jimmyjcl753@gmail.com">email</a>, and <a href="https://github.com/ji-mmyliu">Github</a>.
                         </p>
         
                         <div id="footer-icons">
