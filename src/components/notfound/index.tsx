@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
 
-export const NotFound = () => {
+export const NotFound = (): JSX.Element => {
     const navigate = useNavigate();
     React.useEffect(() => {
         document.title = "404 Page Not Found";
