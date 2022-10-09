@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export const Achievements = () => {
+export const Achievements = (): JSX.Element => {
     React.useEffect(() => {
         document.title = "Achievements | Jimmy's Personal Website";
     }, []);
