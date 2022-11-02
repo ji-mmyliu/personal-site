@@ -5,6 +5,7 @@ import { Projects } from "../projects";
 import { Achievements } from "../achievements";
 import { NotFound } from "../notfound";
 import { Resume } from "../resume";
+import { Notes } from "../notes";
 
 export const _App = (): JSX.Element => {
     return (
@@ -25,8 +26,9 @@ export const _App = (): JSX.Element => {
                                     <Link className="nav-item nav-link" to="/resume">Resume</Link>
 
                                     <div className="btn-group">
-                                        <button className="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ICS Archives</button>
+                                        <button className="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Archives</button>
                                         <div className="dropdown-menu">
+                                            <Link to="/notes" className="dropdown-item">Finance Notes</Link>
                                             <a className="dropdown-item" href="https://ics.portfolio.jimmyliu.dev" target="_blank">ICS4U Portfolio</a>
                                             <a className="dropdown-item" href="https://ics.tutorials.jimmyliu.dev" target="_blank">ICS4U Java Tutorials</a>
                                         </div>
@@ -44,6 +46,7 @@ export const _App = (): JSX.Element => {
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/achievements" element={<Achievements />} />
                 <Route path="/resume" element={<Resume />} />
+                <Route path="/notes" element={<Notes />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </div>

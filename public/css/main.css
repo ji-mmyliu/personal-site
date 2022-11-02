@@ -142,3 +142,12 @@ div.project-content p {
 p.project-text {
     max-width: 600px;
 }
+
+.notes-form {
+    border-width: 1em;
+    border-color: white;
+}
+
+.error-text {
+    color: red;
+}

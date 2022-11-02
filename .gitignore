@@ -3,6 +3,7 @@ portfolio-website/
 
 build/
 dist/
+public/lesson1.html
 
 # Logs
 logs

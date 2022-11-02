@@ -1,11 +1,11 @@
 import * as React from "react";
 
-const Project = (props: {name: string, file: string, children: Array<JSX.Element>}): JSX.Element => {
+const Project = (props: { name: string, file: string, children: Array<JSX.Element> }): JSX.Element => {
     return (
-        <div className="card text-light" style={{marginLeft:'2.5em', marginBottom:'2em'}}>
-            <img className="card-img" src={`/${props.file}`} alt={props.name} style={{width:'40em', height:'24em', filter:'brightness(40%)'}}></img>
+        <div className="card text-light" style={{ marginLeft: '2.5em', marginBottom: '2em' }}>
+            <img className="card-img" src={`/img/${props.file}`} alt={props.name} style={{ width: '40em', height: '24em', filter: 'brightness(40%)' }}></img>
             <div className="card-img-overlay">
-                <h2 style={{color:'#fff'}}>{props.name}</h2>
+                <h2 style={{ color: '#fff' }}>{props.name}</h2>
                 <div className="project-content">
                     {props.children}
                 </div>
@@ -25,6 +25,10 @@ export const Projects = (): JSX.Element => {
                 <div className="card-body">
                     <legend className="border-bottom mb-4"><h1 className="card-title">My Projects</h1></legend>
                 </div>
+                <Project name="RoundTable" file="roundtable.png">
+                    <p>A virtual roundtable that can do (almost) everything a real table can do! Made for the Hack the North 2022 hackathon.</p>
+                    <a href="https://github.com/orgs/Roundtable-HTN/repositories"><button className="btn btn-dark">Github Repo</button></a>
+                </Project>
                 <Project name="Discord Bot Online Judge" file="dboj.png">
                     <p>An online judging platform made as both a Discord bot and a website. Hosted 9 contests, has over 60 problems, and supports 16 programming languages.</p>
                     <a href="https://dboj.jimmyliu.dev/"><button className="btn btn-warning">Link to Site</button></a>
