@@ -11,16 +11,17 @@ export const Notes = (): JSX.Element => {
     const lessonNumberChange = (e): void => {
         setNum(e.target.value);
         checkExists(e.target.value);
+        console.log("Changed!");
     }
 
     const checkExists = (lessonNum: number): void => {
-        const result = fetch(lessonUrl(lessonNum), { method: 'HEAD' }).then((result) => {
+        const result = fetch(lessonUrl(lessonNum), { method: 'HEAD' }).then((result: Response) => {
             setError(!result.ok);
         });
     }
 
     const lessonUrl = (lessonNum: number): string => {
-        return `/notes/finance/${lessonNum}`;
+        return `/notes/finance/lesson${lessonNum}.html`;
     }
 
     return (
@@ -35,9 +36,11 @@ export const Notes = (): JSX.Element => {
                     </div>
                 </form>
 
-                <div className="embed-responsive embed-responsive-21by9">
-                    <iframe className="embed-responsive-item" src={lessonUrl(num)}></iframe>
-                </div>
+                {!error &&
+                    <div className="embed-responsive embed-responsive-21by9">
+                        <iframe className="embed-responsive-item" src={lessonUrl(num)}></iframe>
+                    </div>
+                }
             </article>
         </div>
     );
