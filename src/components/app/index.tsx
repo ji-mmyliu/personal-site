@@ -6,6 +6,7 @@ import { Achievements } from "../achievements";
 import { NotFound } from "../notfound";
 import { Resume } from "../resume";
 import { Notes } from "../notes";
+import { Files } from "../files";
 
 export const _App = (): JSX.Element => {
     return (
@@ -47,6 +48,7 @@ export const _App = (): JSX.Element => {
                 <Route path="/achievements" element={<Achievements />} />
                 <Route path="/resume" element={<Resume />} />
                 <Route path="/notes" element={<Notes />} />
+                <Route path="/files" element={<Files />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </div>
