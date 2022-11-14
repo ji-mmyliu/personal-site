@@ -151,3 +151,9 @@ p.project-text {
 .error-text {
     color: red;
 }
+
+.lesson-input {
+    display: flex;
+    flex-direction: row;
+
+}
