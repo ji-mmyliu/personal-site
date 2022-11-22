@@ -11,7 +11,6 @@ export const Notes = (): JSX.Element => {
     const lessonNumberChange = (e): void => {
         setNum(e.target.value);
         checkExists(e.target.value);
-        console.log("Changed!");
     }
 
     const checkExists = (lessonNum: number): void => {
@@ -30,7 +29,7 @@ export const Notes = (): JSX.Element => {
                 <form>
                     <div className="form-group">
                         <label htmlFor="lesson-num">Lesson Number</label>
-                        <input type="number" className="form-control" id="lesson-num" onChange={lessonNumberChange} aria-describedby="emailHelp" placeholder="Enter lesson number" />
+                        <input type="text" className={`form-control ${!error && "is-valid"}`} id="lesson-num" onChange={lessonNumberChange} aria-describedby="emailHelp" placeholder="Enter lesson number" />
                         {error && <small id="lesson-num-help" className="form-text error-text">Sorry, lesson not here yet!</small>}
                         <small id="lesson-num-help" className="form-text text-muted">Notes should update automatically below!</small>
                     </div>
