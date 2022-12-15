@@ -44,7 +44,7 @@ export const Notes = (): JSX.Element => {
                 </form>
 
                 {!error &&
-                    <div className="embed-responsive embed-responsive-21by9">
+                    <div className="embed-responsive embed-responsive-4by3">
                         <iframe className="embed-responsive-item" src={lessonUrl(num)}></iframe>
                     </div>
                 }
