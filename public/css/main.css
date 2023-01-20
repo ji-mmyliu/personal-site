@@ -151,3 +151,8 @@ p.project-text {
 .error-text {
     color: red;
 }
+
+#notes-content {
+    border: none;
+    height: 2000px;
+}
