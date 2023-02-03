@@ -11,7 +11,10 @@ export const Notes = (): JSX.Element => {
     const [error, setError] = React.useState(false);
 
     React.useEffect((): void => {
-        document.title = "Notes | Jimmy's Personal Website";
+        document.title = `Lesson ${num} Notes | Jimmy's Personal Website`;
+    }, [num]);
+
+    React.useEffect((): void => {
         (document.getElementById("lesson-num")! as any).value = (!!lessonId) ? lessonId! : 1;
     }, []);
 
@@ -37,16 +40,14 @@ export const Notes = (): JSX.Element => {
                 <form>
                     <div className="form-group">
                         <label htmlFor="lesson-num">Lesson Number</label>
-                        <input type="number" min={1} className={`form-control ${!error && "is-valid"}`} id="lesson-num" onChange={lessonNumberChange} aria-describedby="emailHelp" placeholder="Enter lesson number" />
+                        <input type="number" min={1} className={`form-control ${!error && "is-valid"}`} id="lesson-num" onChange={lessonNumberChange} aria-describedby="emailHelp" placeholder="Enter lesson number" style={{maxWidth: "125px"}} />
                         {error && <small id="lesson-num-help" className="form-text error-text">Sorry, lesson not here yet!</small>}
                         <small id="lesson-num-help" className="form-text text-muted">Notes should update automatically below!</small>
                     </div>
                 </form>
 
                 {!error &&
-                    <div className="embed-responsive embed-responsive-21by9">
-                        <iframe className="embed-responsive-item" src={lessonUrl(num)}></iframe>
-                    </div>
+                    <iframe id="notes-content" src={lessonUrl(num)}></iframe>
                 }
             </article>
         </div>
