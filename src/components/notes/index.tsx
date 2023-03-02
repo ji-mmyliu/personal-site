@@ -5,6 +5,7 @@ import * as config from '../../../config';
 
 export const Notes = (): JSX.Element => {
     const query: URLSearchParams = useQuery();
+    const { id } = useParams();
     const lessonId: string | null = query.get("lessonId");
 
     const [num, setNum] = React.useState((!!lessonId) ? parseInt(lessonId!) : 1);
@@ -21,7 +22,7 @@ export const Notes = (): JSX.Element => {
     const lessonNumberChange = (e): void => {
         setNum(e.target.value);
         checkExists(e.target.value);
-        window.history.replaceState(null, "", `/notes?lessonId=${encodeURIComponent(e.target.value)}`);
+        window.history.replaceState(null, "", `/notes/${id}?lessonId=${encodeURIComponent(e.target.value)}`);
     }
 
     const checkExists = (lessonNum: number): void => {
@@ -31,7 +32,7 @@ export const Notes = (): JSX.Element => {
     }
 
     const lessonUrl = (lessonNum: number): string => {
-        return `${config.baseURL}/notes/finance/lesson${lessonNum}.html`;
+        return `${config.baseURL}/notes/${id}/lesson${lessonNum}.html`;
     }
 
     return (
