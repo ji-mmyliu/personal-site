@@ -13,19 +13,17 @@ export const Resume = (): JSX.Element => {
 
     const getContentWidth = (element: Element): number => {
         const styles = getComputedStyle(element);
-      
+
         return element.clientWidth
-          - parseFloat(styles.paddingLeft)
-          - parseFloat(styles.paddingRight);
+            - parseFloat(styles.paddingLeft)
+            - parseFloat(styles.paddingRight);
     }
 
     return (
-        <div className="container pl-5 pr-5">
-            <article className="card mb-3">
-                <div className="card-body" id="resume-card">
-                    <embed src="/resume.pdf" id="resume" height={1200} />
-                </div>
-            </article>
-        </div>
+        <article className="card mb-3">
+            <div className="card-body" id="resume-card">
+                <embed src="/resume.pdf" id="resume" height={1200} />
+            </div>
+        </article>
     );
 }

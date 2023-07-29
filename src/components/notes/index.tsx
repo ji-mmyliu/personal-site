@@ -35,21 +35,19 @@ export const Notes = (): JSX.Element => {
     }
 
     return (
-        <div className="container pl-5 pr-5">
-            <article className="card mb-3 notes-form">
-                <form>
-                    <div className="form-group">
-                        <label htmlFor="lesson-num">Lesson Number</label>
-                        <input type="number" min={1} className={`form-control ${!error && "is-valid"}`} id="lesson-num" onChange={lessonNumberChange} aria-describedby="emailHelp" placeholder="Enter lesson number" style={{maxWidth: "125px"}} />
-                        {error && <small id="lesson-num-help" className="form-text error-text">Sorry, lesson not here yet!</small>}
-                        <small id="lesson-num-help" className="form-text text-muted">Notes should update automatically below!</small>
-                    </div>
-                </form>
+        <article className="card mb-3 notes-form">
+            <form>
+                <div className="form-group">
+                    <label htmlFor="lesson-num">Lesson Number</label>
+                    <input type="number" min={1} className={`form-control ${!error && "is-valid"}`} id="lesson-num" onChange={lessonNumberChange} aria-describedby="emailHelp" placeholder="Enter lesson number" style={{ maxWidth: "125px" }} />
+                    {error && <small id="lesson-num-help" className="form-text error-text">Sorry, lesson not here yet!</small>}
+                    <small id="lesson-num-help" className="form-text text-muted">Notes should update automatically below!</small>
+                </div>
+            </form>
 
-                {!error &&
-                    <iframe id="notes-content" src={lessonUrl(num)}></iframe>
-                }
-            </article>
-        </div>
+            {!error &&
+                <iframe id="notes-content" src={lessonUrl(num)}></iframe>
+            }
+        </article>
     );
 }

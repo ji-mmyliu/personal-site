@@ -12,7 +12,7 @@ export const _App = (): JSX.Element => {
         <div className="page">
             <div className="navbar">
                 <header className="site-header">
-                    <nav className="navbar navbar-expand-md navbar-dark bg-success fixed-top">
+                    <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
                         <div className="container">
                             <Link className="navbar-brand mr-4" to="/">Jimmy Liu's Portfolio</Link>
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,10 +23,11 @@ export const _App = (): JSX.Element => {
                                     <Link className="nav-item nav-link" to="/about-me">About Me</Link>
                                     <Link className="nav-item nav-link" to="/projects">Projects</Link>
                                     <Link className="nav-item nav-link" to="/achievements">Achievements</Link>
-                                    <Link className="nav-item nav-link" to="/resume">Resume</Link>
+                                    {/* <Link className="nav-item nav-link" to="/resume">Resume</Link> */}
+                                    <a className="nav-item nav-link" href="/resume.pdf" target="_blank">Resume</a>
 
                                     <div className="btn-group">
-                                        <button className="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Archives</button>
+                                        <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Archives</button>
                                         <div className="dropdown-menu">
                                             <Link to="/notes" className="dropdown-item">Finance Notes</Link>
                                             <a className="dropdown-item" href="https://ics.portfolio.jimmyliu.dev" target="_blank">ICS4U Portfolio</a>
@@ -40,15 +41,17 @@ export const _App = (): JSX.Element => {
                 </header>
             </div>
 
-            <Routes>
-                <Route path="/" element={<About />} />
-                <Route path="/about-me" element={<About />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/achievements" element={<Achievements />} />
-                <Route path="/resume" element={<Resume />} />
-                <Route path="/notes" element={<Notes />} />
-                <Route path="*" element={<NotFound />} />
-            </Routes>
+            <div className="container pl-2 pr-2">
+                <Routes>
+                    <Route path="/" element={<About />} />
+                    <Route path="/about-me" element={<About />} />
+                    <Route path="/projects" element={<Projects />} />
+                    <Route path="/achievements" element={<Achievements />} />
+                    <Route path="/resume" element={<Resume />} />
+                    <Route path="/notes" element={<Notes />} />
+                    <Route path="*" element={<NotFound />} />
+                </Routes>
+            </div>
         </div>
     );
 }

@@ -1,1 +1,1 @@
-export let baseURL = "https://jimmyliu.dev";
+export let baseURL = "";
