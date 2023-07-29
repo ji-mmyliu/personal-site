@@ -12,7 +12,7 @@ export const About = (): JSX.Element => {
                 <div className="paragraph">
                     <h3 style={{ marginBottom: '1em' }}>Hi, I'm Jimmy!</h3>
                     <p className="card-text">
-                        I am a Grade 12 student in the MaCS program at William Lyon Mackenzie Collegiate institute. My passions include competitive programming, software development, and mathematics.
+                        I am an incoming first year student at the University of Waterloo Software Engineering program. My passions include competitive programming, software development, and mathematics.
                     </p>
                 </div>
 
