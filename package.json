@@ -1,6 +1,7 @@
 {
     "name": "personal-site",
     "scripts": {
+        "start": "npx vite",
         "build": "npx vite build"
     },
     "repository": {
@@ -27,7 +28,7 @@
         "@vitejs/plugin-react": "^1.2.0",
         "sass": "^1.49.7",
         "typescript": "^4.7.4",
-        "vite": "^2.8.0",
+        "vite": "^4.4.7",
         "vite-tsconfig-paths": "^3.4.0"
     }
 }
