@@ -29,7 +29,8 @@ export const _App = (): JSX.Element => {
                                     <div className="btn-group">
                                         <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Archives</button>
                                         <div className="dropdown-menu">
-                                            <Link to="/notes" className="dropdown-item">Finance Notes</Link>
+                                            <Link to="/notes/stats" className="dropdown-item">Statistics Notes</Link>
+                                            <Link to="/notes/finance" className="dropdown-item">Finance Notes</Link>
                                             <a className="dropdown-item" href="https://ics.portfolio.jimmyliu.dev" target="_blank">ICS4U Portfolio</a>
                                             <a className="dropdown-item" href="https://ics.tutorials.jimmyliu.dev" target="_blank">ICS4U Java Tutorials</a>
                                         </div>
