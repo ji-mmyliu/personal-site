@@ -156,3 +156,9 @@ p.project-text {
     border: none;
     height: 2000px;
 }
+
+.project-links {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
