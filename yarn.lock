@@ -301,14 +301,14 @@
     "@babel/plugin-syntax-jsx" "^7.22.5"
     "@babel/types" "^7.22.5"
 
-"@babel/runtime@^7.12.5", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.12.5", "@babel/runtime@^7.13.9", "@babel/runtime@^7.9.2":
   version "7.22.6"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.22.6.tgz#57d64b9ae3cff1d67eb067ae117dac087f5bd438"
   integrity sha512-wDb5pWm4WDdF6LFUde3Jl8WzPA+3ZbxYqkC6xAXuD3irdEHN1k0NfTRrJD8ZD378SJ61miMLCqIOXYhd8x+AJQ==
   dependencies:
     regenerator-runtime "^0.13.11"
 
-"@babel/template@^7.22.5", "@babel/template@^7.3.3":
+"@babel/template@^7.22.5", "@babel/template@^7.3.3", "@babel/template@^7.4.4":
   version "7.22.5"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.22.5.tgz#0c8c4d944509875849bd0344ff0050756eefc6ec"
   integrity sha512-X7yV7eiwAxdj9k94NEylvbVHLiVG1nvzCV2EAowhxLTwODV1jl9UzZ48leOC0sH7OnuHrIkllaBgneUykIcZaw==
@@ -814,7 +814,7 @@
   resolved "https://registry.yarnpkg.com/@types/aria-query/-/aria-query-5.0.1.tgz#3286741fb8f1e1580ac28784add4c7a1d49bdfbc"
   integrity sha512-XTIieEY+gvJ39ChLcB4If5zHtPxt3Syj5rgZR+e1ctpmK8NjPf0zFqsz4JpLJT0xla9GFDKjy8Cpu331nrmE1Q==
 
-"@types/babel__core@^7.1.14":
+"@types/babel__core@^7.1.12", "@types/babel__core@^7.1.14":
   version "7.20.1"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.20.1.tgz#916ecea274b0c776fec721e333e55762d3a9614b"
   integrity sha512-aACu/U/omhdk15O4Nfb+fHgH/z3QsfQzpnvRZhYhThms83ZnAOZz7zZAWO7mn2yyNQaA4xTO8GLK3uqFU4bYYw==
@@ -1157,6 +1157,39 @@ babel-plugin-jest-hoist@^29.5.0:
     "@types/babel__core" "^7.1.14"
     "@types/babel__traverse" "^7.0.6"
 
+babel-plugin-transform-import-meta@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-import-meta/-/babel-plugin-transform-import-meta-2.2.0.tgz#a8a6a9a1bcb8e75ac5a44c6848bf1deb4ebfeb78"
+  integrity sha512-+DNF2SJAj2Pd0b1sObz+hyzNgUlI9DccPtMcF7ulMM0BxPrMF83ERjvPQwcQ9FRFSddWcC7DOw0FuyWgkQRoqg==
+  dependencies:
+    "@babel/template" "^7.4.4"
+    tslib "^2.4.0"
+
+babel-plugin-transform-vite-meta-env@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-vite-meta-env/-/babel-plugin-transform-vite-meta-env-1.0.3.tgz#cbf81becc95b71dcc170ee4863cb7f6919ed99bb"
+  integrity sha512-eyfuDEXrMu667TQpmctHeTlJrZA6jXYHyEJFjcM0yEa60LS/LXlOg2PBbMb8DVS+V9CnTj/j9itdlDVMcY2zEg==
+  dependencies:
+    "@babel/runtime" "^7.13.9"
+    "@types/babel__core" "^7.1.12"
+
+babel-plugin-transform-vite-meta-glob@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-vite-meta-glob/-/babel-plugin-transform-vite-meta-glob-1.0.3.tgz#74320e0ea09b6325974109cab1c3fc6f3a6c8036"
+  integrity sha512-JW3VnwUjJqpj0FM0vJFxrGdxSBcHOa0j5YMvvtXYPmFshroq53nbK9dqRETgjXlMrfIz0oU/6ki+u1GdVWdNHA==
+  dependencies:
+    "@babel/runtime" "^7.13.9"
+    "@types/babel__core" "^7.1.12"
+    glob "^7.1.6"
+
+babel-plugin-transform-vite-meta-hot@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-vite-meta-hot/-/babel-plugin-transform-vite-meta-hot-1.0.0.tgz#d806de0b1f9826eb3fe0c4e82996973d818895df"
+  integrity sha512-qF7T46bDG5UPPOfy4MFgQJyd3mZvm1sGOR2gZ4lIHy6DEcxAVTIt39/adAn89il44CvwestshuEybKPMR+L/Tg==
+  dependencies:
+    "@babel/runtime" "^7.13.9"
+    "@types/babel__core" "^7.1.12"
+
 babel-preset-current-node-syntax@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/babel-preset-current-node-syntax/-/babel-preset-current-node-syntax-1.0.1.tgz#b4399239b89b2a011f9ddbe3e4f401fc40cff73b"
@@ -1182,6 +1215,17 @@ babel-preset-jest@^29.5.0:
   dependencies:
     babel-plugin-jest-hoist "^29.5.0"
     babel-preset-current-node-syntax "^1.0.0"
+
+babel-preset-vite@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/babel-preset-vite/-/babel-preset-vite-1.1.0.tgz#753581a7e320f27f163b27681d70ec9ffaa9265e"
+  integrity sha512-5OnV5RPD+Byi1KnhQpgzz2e1Bc2PFJ9i6wy1VDMPmYu0NjaxcyJuWy9piBoefCL4tMn1nm3VtvInPNitCHJnbQ==
+  dependencies:
+    "@babel/runtime" "^7.13.9"
+    "@types/babel__core" "^7.1.12"
+    babel-plugin-transform-vite-meta-env "1.0.3"
+    babel-plugin-transform-vite-meta-glob "1.0.3"
+    babel-plugin-transform-vite-meta-hot "1.0.0"
 
 balanced-match@^1.0.0:
   version "1.0.2"
@@ -3011,6 +3055,11 @@ react-dom@^18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
+react-error-overlay@6.0.9:
+  version "6.0.9"
+  resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.9.tgz#3c743010c9359608c375ecd6bc76f35d93995b0a"
+  integrity sha512-nQTTcUu+ATDbrSD1BZHr5kgSD4oF8OFjxun8uAaL8RwPBacGBNPf/yAuVVdx17N8XNzRDMrZ9XcKZHCjPW+9ew==
+
 react-is@^17.0.1:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
@@ -3433,6 +3482,11 @@ tslib@^1.9.3:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
+
+tslib@^2.4.0:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.6.1.tgz#fd8c9a0ff42590b25703c0acb3de3d3f4ede0410"
+  integrity sha512-t0hLfiEKfMUoqhG+U1oid7Pva4bbDPHYfJNiB7BiIjRkj1pyC++4N3huJfqY6aRH6VTB0rvtzQwjM4K6qpfOig==
 
 type-detect@4.0.8:
   version "4.0.8"

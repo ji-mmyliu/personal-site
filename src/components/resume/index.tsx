@@ -22,7 +22,7 @@ export const Resume = (): JSX.Element => {
     return (
         <article className="card mb-3">
             <div className="card-body" id="resume-card">
-                <embed src="/resume.pdf" id="resume" height={1200} />
+                <embed src="/resume.pdf" data-testid="resumeEmbed" id="resume" height={1200} />
             </div>
         </article>
     );

@@ -49,7 +49,7 @@ export const _App = (): JSX.Element => {
                     <Route path="/projects" element={<Projects />} />
                     <Route path="/achievements" element={<Achievements />} />
                     <Route path="/resume" element={<Resume />} />
-                    <Route path="/notes" element={<Notes />} />
+                    <Route path="/notes/:id" element={<Notes />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </div>

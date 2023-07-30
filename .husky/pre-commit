@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-yarn test-coverage
+yarn test:coverage

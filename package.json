@@ -4,7 +4,7 @@
         "prepare": "husky install",
         "start": "vite dev",
         "test": "jest --watch",
-        "test-coverage": "jest --coverage",
+        "test:coverage": "jest --coverage",
         "build": "vite build --outDir ./dist/"
     },
     "repository": {
@@ -33,9 +33,12 @@
         "@types/react": "^17.0.48",
         "@types/react-dom": "^17.0.17",
         "@vitejs/plugin-react": "^1.2.0",
+        "babel-plugin-transform-import-meta": "^2.2.0",
+        "babel-preset-vite": "^1.1.0",
         "husky": "^8.0.3",
         "jest": "^29.6.2",
         "jest-environment-jsdom": "^29.6.2",
+        "react-error-overlay": "6.0.9",
         "sass": "^1.49.7",
         "ts-jest": "^29.1.1",
         "typescript": "^5.1.6",

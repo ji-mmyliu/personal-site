@@ -5,6 +5,7 @@ export const About = (): JSX.Element => {
     React.useEffect((): void => {
         document.title = "About Me | Jimmy's Personal Website";
     }, []);
+
     return (
         <article className="card mb-3">
             <div className="card-body">

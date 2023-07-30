@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 export const NotFound = (): JSX.Element => {
     const navigate = useNavigate();
     React.useEffect(() => {
-        document.title = "404 Page Not Found";
+        document.title = "404 Page Not Found | Jimmy's Personal Website";
     }, []);
     return (
         <article className="card mb-3">
@@ -15,7 +15,7 @@ export const NotFound = (): JSX.Element => {
                     <a href={"/"} onClick={(ev) => {
                         ev.preventDefault();
                         navigate("/");
-                    }}><button className="btn btn-outline-primary">Back to Home</button></a>
+                    }}><button className="btn btn-outline-primary" data-testid="backToHome">Back to Home</button></a>
                 </p>
             </div>
         </article>
