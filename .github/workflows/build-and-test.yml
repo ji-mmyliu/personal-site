@@ -1,0 +1,34 @@
+name: Build and Test React Application
+
+on:
+  push:
+    branches: [ "*" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.10.0]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Setup Yarn
+      run: |
+        npm install -g yarn
+        yarn install
+    
+    - name: Test Application
+      run: |
+        yarn test:coverage
+    
+    - name: Build Application
+      run: |
+        yarn build
