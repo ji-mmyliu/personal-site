@@ -1,0 +1,6 @@
+.project-background-img {
+    width: 100%;
+    max-width: 40em;
+    height: 60%;
+    filter: brightness(50%);
+}

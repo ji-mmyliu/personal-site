@@ -2,7 +2,7 @@
     "name": "personal-site",
     "scripts": {
         "prepare": "husky install",
-        "start": "vite dev",
+        "start": "vite dev --open",
         "test": "jest --watch",
         "test:coverage": "jest --coverage",
         "build": "vite build --outDir ./dist/"

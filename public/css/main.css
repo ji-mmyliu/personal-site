@@ -95,11 +95,18 @@ a.article-title:hover {
         padding: 8px;
     }
 }
-.container {
+@media (min-width: 0px) {
+    .container {
+        margin: 0 0 0 0;
+        width: 100%;
+    }
+}
+/* .container {
     width: 1500px;
     max-width: 90%;
     margin: 0 auto;
-}
+} */
+
 .col-md-8 {
     width: fit-content;
 }
