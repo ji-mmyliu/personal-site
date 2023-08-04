@@ -1,6 +1,35 @@
 .project-background-img {
-    width: 100%;
-    max-width: 40em;
-    height: 60%;
+    /* width: 100%; */
+    width: 40em;
+    /* height: 60%; */
+    height: 24em;
     filter: brightness(50%);
+}
+
+@media (max-width: 835px) {
+    .shrink {
+        -webkit-transform:scale(0.8);
+        -moz-transform:scale(0.8);
+        -ms-transform:scale(0.8);
+        transform:scale(0.8);
+        transform-origin: top left;
+    }
+}
+
+@media (max-width: 675px) {
+    .shrink {
+        -webkit-transform:scale(0.5);
+        -moz-transform:scale(0.5);
+        -ms-transform:scale(0.5);
+        transform:scale(0.5);
+        transform-origin: top left;
+    }
+}
+
+.grow { 
+    transition: all .2s ease-in-out; 
+}
+
+.grow:hover { 
+    transform: scale(1.05); 
 }
