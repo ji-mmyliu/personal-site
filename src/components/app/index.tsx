@@ -42,7 +42,7 @@ export const _App = (): JSX.Element => {
                 </header>
             </div>
 
-            <div className="container pl-2 pr-2">
+            <div className="container">
                 <Routes>
                     <Route path="/" element={<About />} />
                     <Route path="/about-me" element={<About />} />

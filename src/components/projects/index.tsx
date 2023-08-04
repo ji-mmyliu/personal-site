@@ -2,8 +2,8 @@ import * as React from "react";
 
 const Project = (props: { name: string, file: string, children: Array<JSX.Element> }): JSX.Element => {
     return (
-        <div className="card text-light" style={{ margin: "0 2.5em 2em 2.5em", width: "fit-content" }}>
-            <img className="card-img" src={`/img/${props.file}`} alt={props.name} style={{ width: '40em', height: '24em', filter: 'brightness(50%)' }}></img>
+        <div className="card text-light grow" style={{ margin: "0 3em 2em 3em", width: "fit-content" }}>
+            <img className="card-img project-background-img" src={`/img/${props.file}`} alt={props.name}></img>
             <div className="card-img-overlay" style={{ width: "fit-content" }}>
                 <h2 style={{ color: '#fff' }}>{props.name}</h2>
                 <div className="project-content">
@@ -20,7 +20,7 @@ export const Projects = (): JSX.Element => {
     }, []);
 
     return (
-        <article className="card mb-3" style={{ minWidth: "fit-content" }}>
+        <article className="card mb-3 shrink" style={{ minWidth: "fit-content" }}>
             <div className="card-body">
                 <legend className="border-bottom mb-4"><h1 className="card-title">My Recent Projects</h1></legend>
             </div>
