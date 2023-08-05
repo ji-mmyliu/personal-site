@@ -32,19 +32,21 @@ export const Notes = (): JSX.Element => {
     }
 
     return (
-        <article className="card mb-3 notes-form">
-            <form>
-                <div className="form-group">
-                    <label htmlFor="lesson-num">Lesson Number</label>
-                    <input type="number" data-testid="lessonNumInput" defaultValue={(!!lessonId) ? lessonId! : 1} min={1} className={`form-control ${!error && "is-valid"}`} id="lesson-num" onChange={lessonNumberChange} placeholder="Enter lesson number" style={{ maxWidth: "125px" }} />
-                    {error && <small id="lesson-num-help" className="form-text error-text">Sorry, lesson not here yet!</small>}
-                    <small id="lesson-num-help" className="form-text text-muted">Notes should update automatically below!</small>
-                </div>
-            </form>
+        <div className="container">
+            <article className="card mb-3 notes-form">
+                <form>
+                    <div className="form-group">
+                        <label htmlFor="lesson-num">Lesson Number</label>
+                        <input type="number" data-testid="lessonNumInput" defaultValue={(!!lessonId) ? lessonId! : 1} min={1} className={`form-control ${!error && "is-valid"}`} id="lesson-num" onChange={lessonNumberChange} placeholder="Enter lesson number" style={{ maxWidth: "125px" }} />
+                        {error && <small id="lesson-num-help" className="form-text error-text">Sorry, lesson not here yet!</small>}
+                        <small id="lesson-num-help" className="form-text text-muted">Notes should update automatically below!</small>
+                    </div>
+                </form>
 
-            {!error &&
-                <iframe id="notes-content" data-testid="notesContent" src={lessonUrl(num)}></iframe>
-            }
-        </article>
+                {!error &&
+                    <iframe id="notes-content" data-testid="notesContent" src={lessonUrl(num)}></iframe>
+                }
+            </article>
+        </div>
     );
 }

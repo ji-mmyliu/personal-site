@@ -42,17 +42,15 @@ export const _App = (): JSX.Element => {
                 </header>
             </div>
 
-            <div className="container">
-                <Routes>
-                    <Route path="/" element={<About />} />
-                    <Route path="/about-me" element={<About />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/achievements" element={<Achievements />} />
-                    <Route path="/resume" element={<Resume />} />
-                    <Route path="/notes/:id" element={<Notes />} />
-                    <Route path="*" element={<NotFound />} />
-                </Routes>
-            </div>
+            <Routes>
+                <Route path="/" element={<About />} />
+                <Route path="/about-me" element={<About />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/achievements" element={<Achievements />} />
+                <Route path="/resume" element={<Resume />} />
+                <Route path="/notes/:id" element={<Notes />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
         </div>
     );
 }
