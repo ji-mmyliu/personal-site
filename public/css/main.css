@@ -101,9 +101,9 @@ a.article-title:hover {
 
 @media (max-width: 444px) {
     .container {
-        width: 1500px;
-        max-width: 90%;
+        width: 100%;
         margin: 0px;
+        padding-right: 1.5em;
     }
 }
 
