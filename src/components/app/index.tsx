@@ -27,7 +27,7 @@ export const _App = (): JSX.Element => {
                                     <a className="nav-item nav-link" href="/resume.pdf" target="_blank">Resume</a>
 
                                     <div className="btn-group">
-                                        <button className="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Archives</button>
+                                        <button className="btn btn-dark dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Archives</button>
                                         <div className="dropdown-menu">
                                             <Link to="/notes/stats" className="dropdown-item">Statistics Notes</Link>
                                             <Link to="/notes/finance" className="dropdown-item">Finance Notes</Link>
