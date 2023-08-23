@@ -9,6 +9,7 @@ export default defineConfig({
         commonjsOptions: {
             transformMixedEsModules: true,
         },
+        outDir: "./build/",
     },
     css: {
         modules: {
