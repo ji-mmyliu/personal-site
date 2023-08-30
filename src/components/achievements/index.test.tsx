@@ -32,7 +32,7 @@ describe('Achievements Page', () => {
     });
 
     it.each([2019, 2020, 2021, 2022])(
-        'Should have every year in timeline',
+        'Should have year %i in timeline',
         (expectedYear: number) => {
             expect(rendered.getByText(expectedYear)).toBeInTheDocument();
         },

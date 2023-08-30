@@ -35,14 +35,28 @@ describe('App', () => {
         expect(rendered.getByText("In addition to preparing for programming contests, hackathons, and math contests, I enjoy giving back to the community by teaching and mentoring other CS and math enthusiasts. I have extensive experience in programming languages such as Python, Java, C++ and also dabble in HTML/CSS and Javascript. In my other time, I play competitive badminton and I also love skiing and snowboarding.")).toBeInTheDocument();
     });
 
-    it('Should route to endpoints after links are clicked', async () => {
-        // Initially not on projects page
-        expect(rendered.queryByText("My Recent Projects")).not.toBeInTheDocument();
+    it.each(["About Me", "Projects", "Achievements", "Resume", "Archives"])(
+        'Should render navbar item %s',
+        async (headerText: string) => {
+            expect(rendered.getAllByText(headerText)[0]).toBeInTheDocument();
+        },
+    );
 
-        const user = userEvent.setup();
-        await user.click(rendered.getByText("projects"));
+    it.each([
+        { link: "About Me", result: "Hi, I'm Jimmy!" },
+        { link: "Projects", result: "My Recent Projects" },
+        { link: "Achievements", result: "Timeline and Achievements" },
+        { link: "Statistics Notes", result: "Notes should update automatically below!" },
+    ])('Should route to $link after link is clicked',
+        async (page: { link: string, result: string }) => {
+            if (page.link !== "About Me") {
+                expect(rendered.queryByText(page.result)).not.toBeInTheDocument();
+            }
 
-        // After click, should be on projects page
-        expect(rendered.getByText("My Recent Projects")).toBeInTheDocument();
-    });
+            const user = userEvent.setup();
+            await user.click(rendered.getAllByText(page.link)[0]);
+
+            expect(rendered.queryByText(page.result)).toBeInTheDocument();
+        }
+    );
 });
