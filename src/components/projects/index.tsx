@@ -25,9 +25,25 @@ export const Projects = (): JSX.Element => {
                 <div className="card-body">
                     <legend className="border-bottom mb-4"><h1 className="card-title">My Recent Projects</h1></legend>
                 </div>
+                <Project name="Screentime Showdown" file="screentime-showdown.png">
+                    <p>Trying to beat social media addiction? Why not do it with a fun and competitive challenge with all your friends?</p>
+                    <div className="project-links">
+                        <a href="https://screentimeshowdown.tech/"><button className="btn" style={{ backgroundColor: "lightblue" }}>Link to Site</button></a>
+                        <a href="https://devpost.com/software/screentime-showdown"><button className="btn btn-dark" style={{ backgroundColor: "purple" }}>Devpost Entry</button></a>
+                        <a href="https://github.com/JasonLovesDoggo/ScreenTimeShowdown"><button className="btn btn-dark">Github Repo</button></a>
+                    </div>
+                </Project>
                 <Project name="Wireguard VPN Wizard" file="wireguard-vpn.png">
                     <p>Ever wanted your own VPN? This wizard can build you a hub-and-spoke virtual private network in minutes!</p>
                     <a href="https://github.com/ji-mmyliu/wg-vpn-onboarder"><button className="btn btn-dark">Github Repo</button></a>
+                </Project>
+                <Project name="QED" file="qed.png">
+                    <p>Interested in learning something niche but don't know where to look? We'll match you with the right people!</p>
+                    <div className="project-links">
+                        <a href="https://qed.patricklin.dev/"><button className="btn" style={{ backgroundColor: "lightblue" }}>Link to Site</button></a>
+                        <a href="https://devpost.com/software/qed"><button className="btn btn-dark" style={{ backgroundColor: "purple" }}>Devpost Entry</button></a>
+                        <a href="https://github.com/ApocalypseCalculator/QED"><button className="btn btn-dark">Github Repo</button></a>
+                    </div>
                 </Project>
                 <Project name="I Do With Liu" file="idowithliu.png">
                     <p>Andrew and Melanie's wedding website! Complete with secure RSVP, auto email sending, and registry claiming.</p>
