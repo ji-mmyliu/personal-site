@@ -10,6 +10,17 @@ export const Achievements = (): JSX.Element => {
                 <div className="card-body">
                     <legend className="border-bottom mb-4"><h1 className="card-title">Timeline and Achievements</h1></legend>
                     <div className="paragraph">
+                        <legend className="border-bottom mb-4"><h3>2023</h3></legend>
+                        <h5>October</h5>
+                        <ul>
+                            <li>Created <a href="https://devpost.com/software/screentime-showdown">Screentime Showdown</a>: the winner of Best Financial Hack at <a href="https://hackthevalley.io/">Hack the Valley 8</a></li>
+                            <li>Created <a href="https://devpost.com/software/qed">QED</a>: the winner of Most Creative Use of Redis Cloud at <a href="https://www.thegoldenhack.ca/">The GoldenHack 5.0</a></li>
+                        </ul>
+                        <h5>September</h5>
+                        <ul>
+                            <li>Began my exciting journey towards Bachelor of Software Engineering at the University of Waterloo</li>
+                        </ul>
+
                         <legend className="border-bottom mb-4"><h3>2022</h3></legend>
 
                         <h5>May</h5>

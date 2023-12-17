@@ -1,6 +1,8 @@
 # Temporary Jekyll Folder
 portfolio-website/
 
+*.DS_Store
+
 build/
 dist/
 public/notes

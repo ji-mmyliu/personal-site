@@ -25,6 +25,13 @@ export const Projects = (): JSX.Element => {
                 <div className="card-body">
                     <legend className="border-bottom mb-4"><h1 className="card-title">My Recent Projects</h1></legend>
                 </div>
+                <Project name="LaZer Guitar" file="laser-guitar.png">
+                    <p>A full guitar too big to take everywhere? We made a guitar with LASERS instead of strings!</p>
+                    <div className="project-links">
+                        <a href="https://drive.google.com/file/d/1x6AdjtD88mvw2LBRyiOMAe-ljKzCD3BE/view?usp=drive_link"><button className="btn" style={{ backgroundColor: "lightblue" }}>Demo Video</button></a>
+                        <a href="https://git.uwaterloo.ca/the-guitar-heros"><button className="btn btn-dark">Code Repo</button></a>
+                    </div>
+                </Project>
                 <Project name="Screentime Showdown" file="screentime-showdown.png">
                     <p>Trying to beat social media addiction? Why not do it with a fun and competitive challenge with all your friends?</p>
                     <div className="project-links">
