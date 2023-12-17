@@ -55,7 +55,7 @@ export const Projects = (): JSX.Element => {
                 <Project name="I Do With Liu" file="idowithliu.png">
                     <p>Andrew and Melanie's wedding website! Complete with secure RSVP, auto email sending, and registry claiming.</p>
                     <div className="project-links">
-                        <a href="https://idowithliu.com/"><button className="btn" style={{ backgroundColor: "#F7E7CE" }}>Link to Site</button></a>
+                        <a href="https://wedding.jimmyliu.dev/"><button className="btn" style={{ backgroundColor: "#F7E7CE" }}>Link to Site</button></a>
                         <a href="https://github.com/idowithliu"><button className="btn btn-dark">Github Repo</button></a>
                     </div>
                 </Project>
