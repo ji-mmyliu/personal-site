@@ -29,7 +29,7 @@ export const Projects = (): JSX.Element => {
                     <p>A full guitar too big to take everywhere? We made a guitar with LASERS instead of strings!</p>
                     <div className="project-links">
                         <a href="https://drive.google.com/file/d/1x6AdjtD88mvw2LBRyiOMAe-ljKzCD3BE/view?usp=drive_link"><button className="btn" style={{ backgroundColor: "lightblue" }}>Demo Video</button></a>
-                        <a href="https://git.uwaterloo.ca/the-guitar-heros"><button className="btn btn-dark">Code Repo</button></a>
+                        <a href="https://github.com/ji-mmyliu/laser-guitar"><button className="btn btn-dark">Code Repo</button></a>
                     </div>
                 </Project>
                 <Project name="Screentime Showdown" file="screentime-showdown.png">
