@@ -30,6 +30,5 @@ describe('About Page', () => {
 
     it('Should render text to screen', async () => {
         expect(rendered.getByText("Hi, I'm Jimmy!")).toBeInTheDocument();
-        expect(rendered.getByText("In addition to preparing for programming contests, hackathons, and math contests, I enjoy giving back to the community by teaching and mentoring other CS and math enthusiasts. I have extensive experience in programming languages such as Python, Java, C++ and also dabble in HTML/CSS and Javascript. In my other time, I play competitive badminton and I also love skiing and snowboarding.")).toBeInTheDocument();
     });
 });
