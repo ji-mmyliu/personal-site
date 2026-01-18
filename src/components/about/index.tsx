@@ -14,16 +14,19 @@ export const About = (): JSX.Element => {
                     <div className="paragraph">
                         <h3 style={{ marginBottom: '1em' }}>Hi, I'm Jimmy!</h3>
                         <p className="card-text">
-                            I am an incoming first year student at the University of Waterloo Software Engineering program. My passions include competitive programming, software development, and mathematics.
+                            Thanks for stopping by, hope you have an awesome day!
+                        </p>
+                        <p className="card-text">
+                            I'm a third year student in the University of Waterloo Software Engineering program. 
                         </p>
                     </div>
 
-                    <div className="paragraph">
+                    {/* <div className="paragraph">
                         <p className="card-text">
                             In addition to preparing for programming contests, hackathons, and math contests, I enjoy giving back to the community by teaching and mentoring other CS and math enthusiasts.
                             I have extensive experience in programming languages such as Python, Java, C++ and also dabble in HTML/CSS and Javascript. In my other time, I play competitive badminton and I also love skiing and snowboarding.
                         </p>
-                    </div>
+                    </div> */}
 
                     <div className="paragraph">
                         <p className="card-text" style={{ marginBottom: 5 + 'rem' }}>
