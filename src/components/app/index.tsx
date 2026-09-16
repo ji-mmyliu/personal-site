@@ -14,7 +14,7 @@ export const _App = (): JSX.Element => {
                 <header className="site-header">
                     <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
                         <div className="container">
-                            <Link className="navbar-brand mr-4" to="/">Jimmy Liu's Portfolio</Link>
+                            <Link className="navbar-brand mr-4" to="/">Jimmy Liu</Link>
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
                             </button>

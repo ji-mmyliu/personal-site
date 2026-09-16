@@ -14,10 +14,10 @@ export const About = (): JSX.Element => {
                     <div className="paragraph">
                         <h3 style={{ marginBottom: '1em' }}>Hi, I'm Jimmy!</h3>
                         <p className="card-text">
-                            Thanks for stopping by, hope you have an awesome day!
+                            I'm a Software Engineering student at the University of Waterloo. 
                         </p>
                         <p className="card-text">
-                            I'm a third year student in the University of Waterloo Software Engineering program. 
+                            Thanks for stopping by, hope you have an awesome day!
                         </p>
                     </div>
 
